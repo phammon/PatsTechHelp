@@ -6,5 +6,5 @@ export default defineConfig({
   plugins: [react(), tailwindcss()],
   // For GitHub Pages: if your repo is <user>.github.io → base: '/'
   // If it's a project repo (github.com/<user>/PatsTechHelp) → base: '/PatsTechHelp/'
-  base: '/PatsTechHelp/',
+  base: '/',
 })
