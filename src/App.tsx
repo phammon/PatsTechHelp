@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import patrickAvatar from './assets/patrick-avatar.png'
+import logo from './assets/logo.png'
 
 // ─── Replace with your Formspree form ID ─────────────────────────────────────
 // 1. Log in at https://formspree.io
@@ -76,8 +77,8 @@ function Navbar() {
     <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="flex items-center justify-between h-16">
-          <a href="#" className="text-white font-bold text-xl tracking-tight">
-            <span className="text-blue-400">Pat's</span> Tech Help
+          <a href="#" aria-label="Pat's Tech Help">
+            <img src={logo} alt="Pat's Tech Help" className="h-12 w-12 rounded-full object-cover" />
           </a>
 
           {/* Desktop */}
@@ -147,6 +148,8 @@ function Hero() {
   return (
     <section className="min-h-screen flex items-center bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 pt-16">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 py-20 text-center w-full">
+        <img src={logo} alt="Pat's Tech Help" className="w-48 h-48 md:w-56 md:h-56 rounded-full object-cover mx-auto mb-8 shadow-2xl shadow-blue-900/40 border-4 border-blue-500/20" />
+
         <div className="inline-flex items-center gap-2 bg-blue-500/10 border border-blue-500/20 rounded-full px-4 py-1.5 text-blue-400 text-sm font-medium mb-8">
           <span className="w-2 h-2 bg-blue-400 rounded-full animate-pulse inline-block" />
           Available for new clients
