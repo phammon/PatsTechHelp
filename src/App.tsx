@@ -255,7 +255,7 @@ const testimonials = [
 
 function Testimonials() {
   return (
-    <section className="py-24 bg-slate-950">
+    <section className="py-24 bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold text-white mb-4">What Neighbors Are Saying</h2>
@@ -270,22 +270,20 @@ function Testimonials() {
           </a>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-3 gap-6 items-start">
           {testimonials.map((t) => (
             <div
               key={t.name}
-              className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-6 flex flex-col gap-4"
+              className="bg-slate-800/60 border border-slate-700/50 rounded-2xl p-6 flex flex-col gap-4"
             >
-              {/* Stars */}
-              <div className="flex gap-1 text-yellow-400 text-lg">
-                {'★★★★★'}
+              <div className="flex items-center justify-between">
+                <div className="text-yellow-400 text-lg tracking-wider">★★★★★</div>
+                <span className="text-xs text-green-500 font-medium bg-green-500/10 border border-green-500/20 px-2 py-0.5 rounded-full">Nextdoor</span>
               </div>
-              {/* Quote */}
-              <p className="text-slate-300 text-sm leading-relaxed flex-1">"{t.quote}"</p>
-              {/* Reviewer */}
+              <p className="text-slate-300 text-sm leading-relaxed flex-1">&ldquo;{t.quote}&rdquo;</p>
               <div className="border-t border-slate-700 pt-4">
                 <div className="font-semibold text-white text-sm">{t.name}</div>
-                <div className="text-slate-500 text-xs mt-0.5">{t.neighborhood} · Nextdoor</div>
+                <div className="text-slate-500 text-xs mt-0.5">{t.neighborhood}</div>
               </div>
             </div>
           ))}
