@@ -10,6 +10,7 @@ const FORMSPREE_URL = 'https://formspree.io/f/mgodgapl'
 // ─────────────────────────────────────────────────────────────────────────────
 
 const CONTACT_EMAIL = 'phammonn@gmail.com'
+const CONTACT_PHONE = '410-322-2029'
 
 const techServices = [
   {
@@ -381,6 +382,13 @@ function Contact() {
           >
             {CONTACT_EMAIL}
           </a>
+          <span className="text-slate-600 mx-2 hidden sm:inline">·</span>
+          <a
+            href={`tel:${CONTACT_PHONE}`}
+            className="inline-block mt-3 text-blue-400 hover:text-blue-300 transition-colors text-sm"
+          >
+            {CONTACT_PHONE}
+          </a>
         </div>
 
         <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8">
@@ -496,6 +504,12 @@ function Footer() {
             className="text-blue-400 hover:text-blue-300 text-sm transition-colors"
           >
             {CONTACT_EMAIL}
+          </a>
+          <a
+            href={`tel:${CONTACT_PHONE}`}
+            className="text-blue-400 hover:text-blue-300 text-sm transition-colors"
+          >
+            {CONTACT_PHONE}
           </a>
           <a
             href="https://nextdoor.com/page/pats-tech-help-wildwood-fl/"
