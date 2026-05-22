@@ -436,6 +436,14 @@ function Contact() {
   return (
     <section id="contact" className="py-24 bg-slate-900">
       <div className="max-w-3xl mx-auto px-4 sm:px-6">
+        {status === 'sent' ? (
+          <div className="text-center py-16">
+            <div className="text-6xl mb-6">✅</div>
+            <h2 className="text-3xl font-bold text-white mb-3">Message Sent!</h2>
+            <p className="text-slate-400 text-lg">Thanks! I'll get back to you as soon as possible.</p>
+          </div>
+        ) : (
+        <>
         <div className="text-center mb-12">
           <h2 className="text-4xl font-bold text-white mb-4">Let's Get Started</h2>
           <p className="text-slate-400 text-lg">
@@ -458,13 +466,6 @@ function Contact() {
         </div>
 
         <div className="bg-slate-800/50 border border-slate-700/50 rounded-2xl p-8">
-          {status === 'sent' ? (
-            <div className="text-center py-8">
-              <div className="text-5xl mb-4">✅</div>
-              <h3 className="text-white text-xl font-semibold mb-2">Message Sent!</h3>
-              <p className="text-slate-400">Thanks! I'll get back to you as soon as possible.</p>
-            </div>
-          ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
               {/* Honeypot — hidden from real users, bots fill it in */}
               <input type="text" name="_honeypot" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
@@ -551,8 +552,9 @@ function Contact() {
                 {status === 'sending' ? 'Sending…' : 'Send Message →'}
               </button>
             </form>
-          )}
         </div>
+        </>
+        )}
       </div>
     </section>
   )
