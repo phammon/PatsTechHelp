@@ -486,10 +486,11 @@ function Contact() {
               </div>
 
               <div>
-                <label className="block text-slate-300 text-sm font-medium mb-2">Phone <span className="text-slate-500 font-normal">(optional)</span></label>
+                <label className="block text-slate-300 text-sm font-medium mb-2">Phone</label>
                 <input
                   type="tel"
                   name="phone"
+                  required
                   className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
                   placeholder="(555) 555-5555"
                 />
