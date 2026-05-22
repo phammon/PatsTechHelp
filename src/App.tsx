@@ -2,12 +2,7 @@ import { useState } from 'react'
 import patrickAvatar from './assets/patrick-avatar.png'
 import logo from './assets/logo.png'
 
-// ─── Replace with your Formspree form ID ─────────────────────────────────────
-// 1. Log in at https://formspree.io
-// 2. Create a new form → copy the ID (e.g. "xabcdefg")
-// 3. Replace YOUR_FORM_ID below
-const FORMSPREE_URL = 'https://formspree.io/f/mgodgapl'
-// ─────────────────────────────────────────────────────────────────────────────
+const CONTACT_API = 'https://admin.patstechhelp.com/api/contact'
 
 const CONTACT_EMAIL = 'phammonn@gmail.com'
 const CONTACT_PHONE = '410-322-2029'
@@ -412,11 +407,20 @@ function Contact() {
     const form = e.currentTarget
     const data = new FormData(form)
 
+    const payload = {
+      name: data.get('name'),
+      email: data.get('email'),
+      phone: data.get('phone'),
+      service: data.get('service'),
+      message: data.get('message'),
+      _honeypot: data.get('_honeypot'),
+    }
+
     try {
-      const res = await fetch(FORMSPREE_URL, {
+      const res = await fetch(CONTACT_API, {
         method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
+        body: JSON.stringify(payload),
+        headers: { 'Content-Type': 'application/json' },
       })
       if (res.ok) {
         setStatus('sent')
@@ -462,6 +466,8 @@ function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-6">
+              {/* Honeypot — hidden from real users, bots fill it in */}
+              <input type="text" name="_honeypot" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
               <div className="grid sm:grid-cols-2 gap-6">
                 <div>
                   <label className="block text-slate-300 text-sm font-medium mb-2">Name</label>
