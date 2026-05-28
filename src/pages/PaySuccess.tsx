@@ -1,5 +1,3 @@
-import React from 'react';
-
 export default function PaySuccess() {
   return (
     <div className="max-w-md mx-auto mt-10 bg-gray-900 border border-gray-800 rounded-xl p-6 text-center">
