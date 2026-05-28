@@ -6,6 +6,7 @@ const links = [
   { href: '#dev', label: 'Dev Work' },
   { href: '#about', label: 'About' },
   { href: '#contact', label: 'Contact' },
+  { href: '/pay', label: 'Pay' },
 ]
 
 const Navbar = () => {
@@ -25,7 +26,11 @@ const Navbar = () => {
               <a
                 key={l.href}
                 href={l.href}
-                className="text-slate-400 hover:text-white transition-colors text-sm font-medium"
+                className={
+                  l.label === 'Pay'
+                    ? 'text-white bg-green-600 hover:bg-green-500 px-4 py-2 rounded-lg text-sm font-medium transition-colors'
+                    : 'text-slate-400 hover:text-white transition-colors text-sm font-medium'
+                }
               >
                 {l.label}
               </a>
@@ -61,7 +66,11 @@ const Navbar = () => {
               <a
                 key={l.href}
                 href={l.href}
-                className="block py-2.5 px-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-800"
+                className={
+                  l.label === 'Pay'
+                    ? 'block py-2.5 px-2 text-white bg-green-600 hover:bg-green-500 rounded-lg text-sm font-medium transition-colors'
+                    : 'block py-2.5 px-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-800'
+                }
                 onClick={() => setOpen(false)}
               >
                 {l.label}
