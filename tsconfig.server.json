@@ -3,7 +3,8 @@
     "target": "es2020",
     "module": "esnext",
     "outDir": "./dist-server",
-    "rootDir": "./server",
+    "rootDir": "./server",  // ✓ fine
+    "moduleResolution": "bundler", // add this
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
