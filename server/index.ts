@@ -4,8 +4,7 @@ import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
-import stripeRouter from './routes/stripe.js';
-
+import stripeRouter from './src/routes/stripe.js';
 
 
 const app = express();
