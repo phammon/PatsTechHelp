@@ -1,12 +1,16 @@
 
+
 import express from 'express';
 import path from 'path';
 import { fileURLToPath } from 'url';
-import stripeRouter from './src/routes/stripe.js';
+
+import stripeRouter from './routes/stripe.js';
+
 
 
 const app = express();
 const PORT = process.env.PORT || 8080;
+
 
 
 const __filename = fileURLToPath(import.meta.url);
@@ -14,6 +18,11 @@ const __dirname = path.dirname(__filename);
 
 
 app.use(express.json());
+
+
+app.use(express.json());
+app.use('/api', stripeRouter);
+
 app.use(express.static(path.join(__dirname, '../../dist'), {
   extensions: ['html', 'js', 'css', 'png', 'svg'],
   setHeaders: (res, filePath) => {
@@ -25,8 +34,8 @@ app.use(express.static(path.join(__dirname, '../../dist'), {
   },
 }));
 
-// Mount Stripe API routes
-app.use('/api', stripeRouter);
+
+
 
 
 // SPA fallback — Express 5 compatible catch-all
@@ -34,6 +43,7 @@ app.get('/{*splat}', (req, res, next) => {
   if (path.extname(req.path)) return next();
   res.sendFile(path.join(__dirname, '../../dist/index.html'));
 });
+
 
 app.listen(PORT, () => {
   console.log(`Frontend server running on port ${PORT}`);
