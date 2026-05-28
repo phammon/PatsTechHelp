@@ -71,7 +71,11 @@ export default function Pay() {
         {error && <p className="text-red-400 text-sm mt-2">{error}</p>}
         {/* success state removed, as it was unused */}
       </form>
-      <p className="text-xs text-gray-400 mt-4">Payments are processed securely by Stripe. All major credit cards accepted.</p>
+      <div className="text-xs text-gray-400 mt-4">
+        <p className="mb-1">Your payment is <span className="text-green-400 font-semibold">safe and secure</span>. We never see or store your credit card details.</p>
+        <p className="mb-1">All payments are processed through <span className="font-semibold">Stripe</span>, a trusted global leader in online payments.</p>
+        <p>After clicking <span className="font-semibold">Pay with Card</span>, you’ll be redirected to Stripe’s secure checkout page to enter your card information.</p>
+      </div>
     </div>
   )
 }
