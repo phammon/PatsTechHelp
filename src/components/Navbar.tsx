@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import logo from '../assets/logo.png'
+import { AVAILABLE_TODAY, CONTACT_PHONE } from '../constants'
 
 const links = [
   { href: '#services', label: 'Services' },
@@ -13,9 +14,24 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
-      <div className="max-w-6xl mx-auto px-4 sm:px-6">
-        <div className="flex items-center justify-between h-16">
+    <nav className="fixed top-0 left-0 right-0 z-50">
+      {/* Announcement Bar */}
+      {AVAILABLE_TODAY && (
+        <div className="bg-green-600 text-white text-sm font-medium text-center py-2.5 px-4">
+          <span className="inline-block w-2 h-2 bg-white rounded-full animate-pulse mr-2 align-middle" />
+          Available for same-day visits today! —{' '}
+          <a href="#contact" className="underline underline-offset-2 hover:text-green-100 transition-colors">
+            Book now
+          </a>
+          {' '}or call/text{' '}
+          <a href={`tel:${CONTACT_PHONE}`} className="underline underline-offset-2 hover:text-green-100 transition-colors">
+            {CONTACT_PHONE}
+          </a>
+        </div>
+      )}
+      <div className="bg-slate-950/90 backdrop-blur-md border-b border-slate-800">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <div className="flex items-center justify-between h-16">
           <a href="#" aria-label="Pat's Tech Help">
             <img src={logo} alt="Pat's Tech Help" className="h-12 w-12 rounded-full object-cover" />
           </a>
@@ -85,6 +101,7 @@ const Navbar = () => {
             </a>
           </div>
         )}
+        </div>
       </div>
     </nav>
   )
