@@ -77,7 +77,7 @@ const Navbar = () => {
                 href={l.href}
                 className={
                   l.label === 'Pay'
-                    ? 'block py-2.5 px-2 text-white bg-green-600 hover:bg-green-500 rounded-lg text-sm font-medium transition-colors'
+                    ? 'block py-2.5 px-2 text-center text-white bg-green-600 hover:bg-green-500 rounded-lg text-sm font-medium transition-colors'
                     : 'block py-2.5 px-2 text-slate-400 hover:text-white transition-colors rounded-lg hover:bg-slate-800'
                 }
                 onClick={() => setOpen(false)}
