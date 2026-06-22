@@ -3,6 +3,10 @@ import { CONTACT_API, CONTACT_EMAIL, CONTACT_PHONE } from '../constants'
 
 const Contact = () => {
   const [status, setStatus] = useState<'idle' | 'sending' | 'sent' | 'error'>('idle')
+  const [service, setService] = useState(() => {
+    const params = new URLSearchParams(window.location.search)
+    return params.get('service') ?? 'pc-tuneup'
+  })
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
@@ -112,8 +116,12 @@ const Contact = () => {
                   </label>
                   <select
                     name="service"
+                    value={service}
+                    onChange={(e) => setService(e.target.value)}
                     className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white focus:outline-none focus:border-blue-500 transition-colors"
                   >
+                    <option value="hourly-visit">In-Home / Remote Visit ($89/hr)</option>
+                    <option value="care-package">Annual Care Package ($299/yr)</option>
                     <option value="pc-tuneup">PC Tune-Up</option>
                     <option value="virus-removal">Virus &amp; Malware Removal</option>
                     <option value="printer-setup">Printer &amp; Device Setup</option>
