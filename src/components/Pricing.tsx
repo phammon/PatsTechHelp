@@ -17,7 +17,7 @@ const Pricing = () => (
               In-Home & Remote Technical Support
             </p>
             <div className="flex items-baseline gap-2">
-              <span className="text-6xl font-bold text-white">$89</span>
+              <span className="text-6xl font-bold text-white">$75</span>
               <span className="text-slate-200 text-xl font-medium">/ hour</span>
             </div>
             <p className="text-amber-400 font-medium mt-3 text-sm bg-amber-950/40 inline-block px-3 py-1 rounded border border-amber-900/50">
