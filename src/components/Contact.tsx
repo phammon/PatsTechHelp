@@ -57,6 +57,9 @@ const Contact = () => {
                 Drop me a message and I'll get back to you the same day. First consultation is always
                 free.
               </p>
+              <p className="text-slate-500 text-sm mt-2">
+                Prefer phone? Call or text me directly and I can fill in the details with you.
+              </p>
               <a
                 href={`mailto:${CONTACT_EMAIL}`}
                 className="inline-block mt-3 text-blue-400 hover:text-blue-300 transition-colors text-sm"
@@ -69,6 +72,13 @@ const Contact = () => {
                 className="inline-block mt-3 text-blue-400 hover:text-blue-300 transition-colors text-sm"
               >
                 {CONTACT_PHONE}
+              </a>
+              <span className="text-slate-600 mx-2 hidden sm:inline">·</span>
+              <a
+                href={`sms:${CONTACT_PHONE}`}
+                className="inline-block mt-3 text-blue-400 hover:text-blue-300 transition-colors text-sm"
+              >
+                Text Pat
               </a>
             </div>
 
@@ -88,11 +98,10 @@ const Contact = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-slate-300 text-sm font-medium mb-2">Email</label>
+                    <label className="block text-slate-300 text-sm font-medium mb-2">Email (optional)</label>
                     <input
                       type="email"
                       name="email"
-                      required
                       className="w-full bg-slate-900 border border-slate-700 rounded-lg px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-blue-500 transition-colors"
                       placeholder="you@example.com"
                     />

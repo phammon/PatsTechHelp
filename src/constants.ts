@@ -1,4 +1,5 @@
 export const CONTACT_API = 'https://admin.patstechhelp.com/api/contact'
+export const ANALYTICS_TRACK_API = 'https://admin.patstechhelp.com/api/analytics/track'
 export const CONTACT_EMAIL = 'phammonn@gmail.com'
 export const CONTACT_PHONE = '410-322-2029'
 
