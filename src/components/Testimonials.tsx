@@ -17,6 +17,12 @@ const testimonials = [
     quote:
       "Patrick is a computer wizard that I found on Nextdoor. He kept in touch so I knew exactly when he'd be here. He is very good with computers and answered all my questions. What makes him different from the others is he's very friendly and kind. I feel like I made a new friend! Call him — you won't be disappointed!",
   },
+  {
+    name: 'Caroline Nespor',
+    neighborhood: 'The Villages',
+    quote:
+      "I was hesitant at first because I’m not very technically literate, but Patrick made the impossible possible. He was professional, courteous, and extremely patient, and he handled every task I needed help with. Whatever you might need, he can do it. He is the best at IT support, and I’m very thankful for his help.",
+  },
 ]
 
 const Testimonials = () => (
